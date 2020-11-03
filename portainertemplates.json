@@ -13,7 +13,11 @@
 				"80/tcp",
 				"443/tcp"
 			],
-			"volumes": ["/etc/nginx", "/usr/share/nginx/html"],
+			"volumes": [
+				{
+					"/etc/nginx": "/usr/share/nginx/html"
+				}
+			],
 			"labels": [
 				{ "name": "traefik.enable", "value": "true" },
 				{ "name": "traefik.http.routers.NAME.entrypoints", "value": "http" },
