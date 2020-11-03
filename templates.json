@@ -29,7 +29,7 @@
 				{ "name": "traefik.http.routers.NAME-sec.tls.certresolver", "value": "le" },
 				{ "name": "traefik.http.routers.NAME-sec.tls.options", "value": "myTLSOptions@file" }
 			]
-		}
+		},
 		{
 			"type": 1,
 			"title": "Registry",
