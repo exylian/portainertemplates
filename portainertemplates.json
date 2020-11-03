@@ -2,7 +2,7 @@
 	"version": "2",
 	"templates": [
 		{
-			"type": "1",
+			"type": 1,
 			"title": "Nginx Alpine - Felix",
 			"description": "High performance web server",
 			"categories": ["webserver"],
