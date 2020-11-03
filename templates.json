@@ -15,7 +15,10 @@
 			],
 			"volumes": [
 				{
-					"/etc/nginx": "/usr/share/nginx/html"
+					"container": "/etc/nginx"
+				},
+				{
+					"container": "/usr/share/nginx/html"
 				}
 			],
 			"labels": [
