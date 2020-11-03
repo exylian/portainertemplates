@@ -1,0 +1,27 @@
+[
+	{
+		"type": "container",
+	    "title": "Nginx Alpine - Felix",
+	    "description": "High performance web server",
+	    "categories": ["webserver"],
+	    "platform": "linux",
+	    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+	    "image": "nginx:alpine",
+	    "ports": [
+	      "80/tcp",
+	      "443/tcp"
+	    ],
+	    "volumes": ["/etc/nginx", "/usr/share/nginx/html"],
+	    "labels": [
+		    { "name": "traefik.enable", "value": "true" },
+		    { "name": "traefik.http.routers.NAME.entrypoints", "value": "http" },
+		    { "name": "traefik.http.routers.NAME.rule", "value": "Host(\"DOMAIN\")" },
+		    { "name": "traefik.http.routers.NAME.middlewares", "value": "https-redirect@file" },
+		    { "name": "traefik.http.routers.NAME-sec.entrypoints", "value": "https" },
+		    { "name": "traefik.http.routers.NAME-sec.rule", "value": "Host(\"DOMAIN\")" },
+		    { "name": "traefik.http.routers.NAME-sec.tls", "value": "true" },
+		    { "name": "traefik.http.routers.NAME-sec.tls.certresolver", "value": "le" },
+		    { "name": "traefik.http.routers.NAME-sec.tls.options", "value": "myTLSOptions@file" }
+  		]
+	}
+]
